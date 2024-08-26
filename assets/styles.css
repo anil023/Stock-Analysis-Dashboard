@@ -1,0 +1,245 @@
+/* CATEGORY DROPDOWN */
+/* styles the selected category from the dropdown, the label text inside the category dropdown is shown in grey color */
+#category-dropdown .Select-value-label {
+    color: grey !important;
+}
+
+
+
+
+/* RANGE SLIDER*/
+/* customizes the handle/circular indicator at the end(close price value) of the slider to appear as a colored tear drop */
+.custom-slider .rc-slider-handle-2 {		
+    position: absolute !important;  /* Ensures the handle's position is absolute */
+    top: 0vh !important;  /* Aligns the handle at the top */
+    width: 0 !important;  /* Set width to 0 to create a triangle */
+    height: 0 !important;  /* Set height to 0 to create a triangle */
+    cursor: pointer !important;  /* Sets the cursor style to pointer */
+    border-left: 5px solid transparent !important;  /* Creates the left side of the triangle */
+    border-right: 5px solid transparent !important; /* Creates the right side of the triangle */
+    border-top: 10px solid rgba(51, 51, 153,1)!important;  /* Creates the top part of the triangle with the desired color */
+    border-radius: 50 !important;  /* Sets the border-radius to 0% to remove a rounded shape */
+    background-color: transparent !important;  /* Ensures the background is transparent */
+    margin-top: -5px !important;  /* Adjusts the vertical position */
+    border-bottom: 9px transparent !important;  /* Creates the bottom transparent triangle */
+    z-index: 2 !important;  /* Ensures the handle is on top of other elements */
+    pointer-events: auto; /* Disable user interaction */
+}
+/* customizes the handle/circular indicator at the start(open stock price) of the slider to be small and invisible */
+.custom-slider .rc-slider-handle-1 {		
+    position: absolute !important;  /* Ensures the handle's position is absolute */
+    top: 1vh !important;  /* Aligns the handle slightly above the top */
+    width: 10px !important;  /* Sets the handle's width */
+    height: 10px !important;  /* Sets the handle's height */
+    cursor: pointer !important;  /* Sets the cursor style to pointer */
+    background-color: transparent !important;  /* Makes the handle background transparent */
+    border: none !important;  /* Removes any border from the handle */
+    z-index: 2 !important;  /* Ensures the handle is on top of other elements */
+}
+
+/* makes the hover text always visible for the start end handle */
+.custom-slider .rc-slider-handle-1::after {
+    opacity: 1 !important;  /* Ensures the hover text is always visible */
+}
+
+/* hides the grey circular indicator at the min and max range limit completely */
+.custom-slider .rc-slider-dot {
+    display: none !important;  /* Hides the grey range limit dot */
+}
+
+/* removes padding between the range slider and the overall slider box container to help align SPY indicator to the right position in X*/
+[class^="custom-slider"] {
+    padding: 0 !important;  /* Removes padding */
+}
+
+/* container for the SPY marker with positioning and cursor settings */
+.marker-container {
+    position: relative;  /* Positions the container relative to its normal position */
+    display: inline-block;  /* Makes the container inline-block */
+    cursor: pointer;  /* Adds a pointer cursor directly to the marker-container */
+}
+
+/* custom tooltip styling for positioning, appearance, and behavior for the SPY */
+.custom-tooltip {
+    position: absolute;  /* Positions the tooltip relative to the parent */
+    top: -5.5vh;  /* Positions the tooltip above the marker */
+    left: 50%;  /* Centers the tooltip horizontally */
+    width: auto;  /* Allows the width to adjust based on content */
+    height: auto;  /* Allows the height to adjust based on content */
+    transform: translateX(-50%);  /* Centers the tooltip horizontally */
+    background-color: #707070;  /* Sets the background color */
+    color: white;  /* Sets the text color */
+    padding: 0.2vw 0.2vw;  /* Adds padding inside the tooltip */
+    border-radius: 0.2vw;  /* Rounds the corners of the tooltip */
+    font-size: 0.75vw;  /* Sets the font size */
+    white-space: nowrap;  /* Prevents text wrapping */
+    z-index: 3;  /* Ensures the tooltip appears above other elements */
+    visibility: hidden;  /* Initially hides the tooltip */
+
+    /* Centers the text horizontally and vertically */
+    display: flex;  /* Uses Flexbox for alignment */
+    justify-content: center;  /* Horizontally centers the text */
+    align-items: center;  /* Vertically centers the text */
+    text-align: center;  /* Centers the text within the element */
+}
+
+/* creates a balloon arrow at the bottom of the tooltip for SPY*/
+.custom-tooltip::after {
+    content: '';  /* Adds an empty content for the arrow */
+    position: absolute;  /* Positions the arrow relative to the tooltip */
+    bottom: -0.65vw;  /* Positions the arrow below the tooltip */
+    left: 50%;  /* Centers the arrow horizontally */
+    transform: translateX(-50%);  /* Centers the arrow horizontally */
+    border-width: 0.4vw;  /* Sets the size of the arrow */
+    border-style: solid;  /* Defines the border style */
+    border-color: #707070 transparent transparent transparent;  /* Sets the arrow color */
+    z-index: 2;  /* Ensures the arrow is above other elements */
+}
+
+/* Makes the tooltip visible when hovering over the marker container */
+.marker-container:hover .custom-tooltip {
+    visibility: visible !important;  /* Makes the tooltip visible on hover */
+    cursor: pointer !important;  /* Ensures the cursor is a pointer on hover */
+}
+
+/* Sets the z-index for slider marks */
+.rc-slider-mark {
+    z-index: 2;  /* Ensures the slider marks appear above other elements */
+}
+
+/* Red slider track */
+.red-slider .rc-slider-track {
+    background-color: #ff8989; /* Red color for positive range */
+}
+
+/* Green slider track */
+.green-slider .rc-slider-track {
+    background-color: #82e9a4; /* Green color for negative range */
+}
+
+.rc-slider-mark-text {
+    font-weight: normal !important; /* Ensures the font is not bold */
+    color: grey !important;
+}
+
+
+
+
+
+
+
+
+.custom-button { /* for the 1w-2w-3m-6m buttons*/
+    color: grey;
+    background-color: transparent;
+    border: none;
+}
+
+.custom-button:hover, /* for the 1w-2w-3m-6m buttons*/
+.custom-button:focus, 
+.custom-button:active {
+    background-color: white; /* Blue background */
+    color: grey important; /* Text color */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+    font-weight: bold; /* Bold text */
+    text-decoration: underline; /* Underline text */
+}
+
+.custom-button-active {
+    background-color: white; /* Blue background */
+    color: #8989ff !important; /* Text color */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+    font-weight: bold; /* Bold text */
+    text-decoration: underline; /* Underline text */
+}
+
+/* Default text color for the checkbox label inside ema-term-toggle */
+#ema-term-toggle label {
+    color: grey; /* Default text color is blue */
+}
+
+#ema-term-toggle input:checked ~ label {
+    color: #8989ff !important;
+    font-weight: bold; /* Bold text */
+}
+
+.form-check-input:checked{
+    background-color: #8989ff !important;
+    border-color: #8989ff !important;
+}
+
+
+/* Text color after selection for dropdown */
+#plot-type-dropdown .Select--single .Select-value-label {
+    color: #8989ff !important;
+    font-weight: bold; /* Bold text */
+}
+
+/* Including custom CSS in assets/custom.css */
+.custom-slider-trial4 .rc-slider-mark {
+    top: 10px !important; /* Adjust the position of the markers */
+}
+.custom-slider-trial4 .rc-slider-mark-text {
+    display: none; /* Hide the numbers */
+}
+.custom-slider-trial4 .rc-slider-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #dedede;
+    border: 0px solid #dedede;
+    border-radius: 50%;
+    margin-top: -7.5px; /* Adjust the vertical alignment */
+}
+
+.custom-slider-trial4 .rc-slider-dot:hover {
+    width: 15px; /* Increased width */
+    height: 15px; /* Increased height */
+    background-color: grey; /* Optionally change the background color */
+    border-color: grey; /* Optionally change the border color */
+    margin-top: -10px; /* Adjust vertical alignment for the new size */
+}
+.custom-slider-trial4 .rc-slider-handle {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #8989ff;
+    background-color: #ebebff;
+    margin-top: -6px; /* Adjust the vertical alignment */
+    margin-left: 0px; /* Adjust the vertical alignment */
+}
+
+.custom-slider-trial4 .rc-slider-rail {
+    display: none; /* Hide the numbers */
+}
+.custom-slider-trial4 .rc-slider-track {
+    display: none; /* Hide the numbers */
+}
+
+.custom-slider-trial4 .rc-slider-tooltip {
+    display: none !important;
+}
+.custom-slider-trial4 {
+        padding: 9px 13px 0px 13px !important; /* top, right, bottom, left */
+}
+
+.period-dropdown .Select-control {
+    height: 1.5vh;  /* Set the height you want for the dropdown control */
+    line-height: 1.5vh;  /* Adjust line height to match the control's height */
+}
+
+.period-dropdown .Select-value-label {
+    font-size: 0.8vw;  /* Adjust the font size for the selected value */
+    color: #8989ff !important;
+    font-weight: bold; /* Bold text */
+    top: 0vh !important;
+}
+
+.period-dropdown .Select-menu-outer {
+    max-height: 30vh;  /* Set the max height of the dropdown menu */
+}
+
+.period-dropdown .Select-input {
+    height: 3vh;  /* Adjust the input height */
+    line-height: 1vh;  /* Adjust line height for input */
+}
