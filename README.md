@@ -98,6 +98,6 @@ License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Contact
-For questions or suggestions, feel free to contact the repository owner at [araju#mtu.edu].
+For questions or suggestions, feel free to contact the repository owner at [araju@mtu.edu].
 
 
